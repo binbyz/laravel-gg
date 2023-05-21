@@ -22,6 +22,7 @@
     "php": "^7.3|^8.0",
     "ext-curl": "*",
     "ext-json": "*",
+    "illuminate/support": "^v7.20.0",
     "beaverlabs/gg": "dev-main"
   },
   "require-dev": {
@@ -47,7 +48,15 @@
   "config": {
     "sort-packages": true,
     "allow-plugins": {
-      "pestphp/pest-plugin": true
+      "pestphp/pest-plugin": true,
+      "kylekatarnls/update-helper": true
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Beaverlabs\\LaravelGG\\LaravelGGServiceProvider"
+      ]
     }
   },
   "minimum-stability": "dev",
