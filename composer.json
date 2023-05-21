@@ -26,6 +26,7 @@
     "beaverlabs/gg": "dev-main"
   },
   "require-dev": {
+    "laravel/framework": "^v8.x",
     "pestphp/pest": "^2.6.1"
   },
   "autoload": {
@@ -38,7 +39,7 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Beaverlabs\\GG\\Tests\\": "tests"
+      "Tests\\": "tests"
     }
   },
   "scripts": {
