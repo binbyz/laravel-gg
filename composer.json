@@ -1,11 +1,14 @@
 {
-  "name": "beaverlabs/gg",
-  "description": "Debug with Ray to fix problems faster",
+  "name": "beaverlabs/laravel-gg",
+  "description": "PHP Debug, Logging Tools",
   "keywords": [
+    "php",
+    "debug",
+    "logging",
     "beaverlabs",
     "gg"
   ],
-  "homepage": "https://github.com/binbyz/gg",
+  "homepage": "https://github.com/binbyz/laravel-gg",
   "license": "MIT",
   "authors": [
     {
@@ -18,14 +21,15 @@
   "require": {
     "php": "^7.3|^8.0",
     "ext-curl": "*",
-    "ext-json": "*"
+    "ext-json": "*",
+    "beaverlabs/gg": "dev-main"
   },
   "require-dev": {
-    "pestphp/pest": "^2.5"
+    "pestphp/pest": "^2.6.1"
   },
   "autoload": {
     "psr-4": {
-      "Beaverlabs\\GG\\": "src"
+      "Beaverlabs\\LaravelGG\\": "src"
     },
     "files": [
       "src/helpers.php"

@@ -2,7 +2,7 @@
 
 namespace Beaverlabs\GG;
 
-final class GG
+final class LaravelGG
 {
     /** @var string */
     private $host;
