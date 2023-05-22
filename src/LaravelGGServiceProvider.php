@@ -31,6 +31,8 @@ class LaravelGGServiceProvider extends ServiceProvider
             throw BindException::make(Collection::class);
         }
 
+        \gg('here#1');
+
         Collection::macro(self::MACRO_NAME, function () {
             \gg($this->items);
 
