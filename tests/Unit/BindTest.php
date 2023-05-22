@@ -5,6 +5,6 @@ test('Collection, gg macro', function () {
 
     $collection->gg();
 
-    expect($collection)->toHaveMethod('gg');
+    expect($collection)->toBeTrue();
 });
 
