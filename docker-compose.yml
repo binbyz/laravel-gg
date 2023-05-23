@@ -1,0 +1,10 @@
+version: '3.7'
+
+services:
+  app:
+    image: php:7.4.3-cli-buster
+    container_name: "laravel-gg_app"
+    volumes:
+      - .:/var/app
+    working_dir: /var/app
+    entrypoint: ["tail", "-f", "/dev/null"]

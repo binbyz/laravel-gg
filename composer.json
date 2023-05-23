@@ -22,12 +22,17 @@
     "php": "^7.4|^8.0",
     "ext-curl": "*",
     "ext-json": "*",
-    "illuminate/support": "^v7.20",
+    "illuminate/contracts": "^7.20|^8.19|^9.0|^10.0",
+    "illuminate/database": "^7.20|^8.19|^9.0|^10.0",
+    "illuminate/queue": "^7.20|^8.19|^9.0|^10.0",
+    "illuminate/support": "^7.20|^8.19|^9.0|^10.0",
     "beaverlabs/gg": "dev-main"
   },
   "require-dev": {
-    "laravel/framework": "^v7.20",
-    "pestphp/pest": "^v1.8.0"
+    "orchestra/testbench-core": "^5.0|^6.0|^7.0|^8.0",
+    "laravel/framework": "^7.20|^8.19|^9.0|^10.0",
+    "pestphp/pest": "^1.23.0",
+    "phpunit/phpunit": "^9.2.6"
   },
   "autoload": {
     "psr-4": {
