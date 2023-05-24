@@ -29,9 +29,10 @@
     "beaverlabs/gg": "dev-main"
   },
   "require-dev": {
-    "orchestra/testbench-core": "^5.0|^6.0|^7.0|^8.0",
     "laravel/framework": "^7.20|^8.19|^9.0|^10.0",
+    "orchestra/testbench-core": "^5.0|^6.0|^7.0|^8.0",
     "pestphp/pest": "^1.23.0",
+    "pestphp/pest-plugin-parallel": "^1.2",
     "phpunit/phpunit": "^9.3"
   },
   "autoload": {
@@ -49,7 +50,10 @@
   },
   "scripts": {
     "test": "vendor/bin/pest",
-    "test-coverage": "vendor/bin/pest --coverage"
+    "test-coverage": "vendor/bin/pest --coverage",
+    "post-autoload-dump": [
+      "@php vendor/bin/testbench package:discover --ansi"
+    ]
   },
   "config": {
     "sort-packages": true,

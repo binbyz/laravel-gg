@@ -4,6 +4,6 @@ test('Collection, gg macro', function () {
     expect(1)->toBeInt();
 });
 
-test('test', function () {
+it('test', function () {
     expect(1)->toBeInt();
 });
