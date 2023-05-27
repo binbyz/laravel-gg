@@ -2,27 +2,24 @@
 
 namespace Beaverlabs\LaravelGG\Tests;
 
-use Beaverlabs\LaravelGG\LaravelGGServiceProvider;
+use Beaverlabs\LaravelGG\Exceptions\BindException;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
-class TestCase extends OrchestraTestCase
+class TestCase extends \PHPUnit\Framework\TestCase
 {
     use RefreshDatabase;
     use DatabaseMigrations;
 
-    protected $loadEnvironmentVariables = true;
-
-    protected function getApplicationTimezone($app)
+    /**
+     * @throws BindException
+     */
+    protected function setUp(): void
     {
-        return 'Asia/Seoul';
-    }
+        parent::setUp();
 
-    protected function getPackageProviders($app)
-    {
-        return [
-            LaravelGGServiceProvider::class,
-        ];
+        $this->app = new \Illuminate\Foundation\Application();
+        $this->provider = new \Beaverlabs\LaravelGG\LaravelGGServiceProvider($this->app);
+        $this->provider->register();
     }
 }

@@ -1,9 +1,9 @@
 <?php
 
-test('Collection, gg macro', function () {
-    expect(1)->toBeInt();
-});
+use Illuminate\Support\Collection;
 
-it('test', function () {
-    expect(1)->toBeInt();
+it('can bind a collection', function () {
+    $result = \collect([1, 2, 3, 4, 5]);
+
+    expect($result->gg())->toBeInstanceOf(Collection::class);
 });
