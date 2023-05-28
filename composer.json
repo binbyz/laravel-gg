@@ -31,7 +31,8 @@
   "require-dev": {
     "laravel/framework": "^7.20|^8.19|^9.0|^10.0",
     "pestphp/pest": "^1.23",
-    "phpunit/phpunit": "^9.3"
+    "phpunit/phpunit": "^9.3",
+    "spatie/ray": "^1.37"
   },
   "autoload": {
     "psr-4": {
