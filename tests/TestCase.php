@@ -3,62 +3,37 @@
 namespace Beaverlabs\LaravelGG\Tests;
 
 use Beaverlabs\LaravelGG\LaravelGGServiceProvider;
-use Illuminate\Config\Repository;
-use Illuminate\Foundation\Application;
-use Illuminate\Foundation\Testing\Concerns\InteractsWithContainer;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Schema;
 
-class TestCase extends \Illuminate\Foundation\Testing\TestCase
+class TestCase extends \Orchestra\Testbench\TestCase
 {
     use DatabaseMigrations;
-    use RefreshDatabase;
-    use InteractsWithContainer;
 
-    public function createApplication()
+    protected $loadEnvironmentVariables = true;
+
+    protected function getApplicationTimezone($app)
     {
-        $app = new Application();
-
-        $app->singleton('path.storage', function ($app) {
-            return '.';
-        });
-
-        $app->singleton(
-            \Illuminate\Contracts\Http\Kernel::class,
-            \Illuminate\Foundation\Http\Kernel::class
-        );
-
-        $app->singleton(
-            \Illuminate\Contracts\Console\Kernel::class,
-            \Illuminate\Foundation\Console\Kernel::class
-        );
-
-        $app->singleton(
-            \Illuminate\Contracts\Debug\ExceptionHandler::class,
-            \Illuminate\Foundation\Exceptions\Handler::class
-        );
-
-        $app->register(LaravelGGServiceProvider::class);
-
-        $app->singleton('config', function ($app) {
-            return new \Illuminate\Config\Repository;
-        });
-
-        \Illuminate\Support\Facades\Facade::setFacadeApplication($app);
-
-        return $app;
+        return 'Asia/Seoul';
     }
 
-    protected function setUp(): void
+    protected function getPackageProviders($app)
     {
-        parent::setUp();
+        return [
+            LaravelGGServiceProvider::class,
+        ];
+    }
 
-        $config = $this->app->make(Repository::class);
+    protected function defineDatabaseMigrations()
+    {
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+    }
 
-        $config->set('app.env', 'testing');
-        $config->set('database.default', 'sqlite');
-        $config->set('database.connections.sqlite.database', ':memory:');
-        $config->set('database.connections.sqlite.prefix', '_test');
+    public function getEnvironmentSetUp($app)
+    {
+        \config()->set('app.env', 'testing');
+        \config()->set('database.default', 'sqlite');
+        \config()->set('database.connections.sqlite.database', ':memory:');
     }
 }

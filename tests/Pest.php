@@ -13,4 +13,4 @@
 
 use Beaverlabs\LaravelGG\Tests\TestCase;
 
-uses(TestCase::class)->in('.');
+uses(TestCase::class)->in('Unit');
