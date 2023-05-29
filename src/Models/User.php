@@ -1,6 +1,6 @@
 <?php
 
-namespace Beaverlabs\LaravelGG\Models;
+namespace Beaverlabs\LaravelGg\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

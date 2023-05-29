@@ -1,39 +1,19 @@
 <?php
 
-namespace Beaverlabs\LaravelGG\Tests;
+namespace Tests;
 
-use Beaverlabs\LaravelGG\LaravelGGServiceProvider;
-use Illuminate\Database\Schema\Blueprint;
+use Beaverlabs\LaravelGg\LaravelGgServiceProvider;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Support\Facades\Schema;
 
-class TestCase extends \Orchestra\Testbench\TestCase
+abstract class TestCase extends \Illuminate\Foundation\Testing\TestCase
 {
+    use \Orchestra\Testbench\Concerns\CreatesApplication;
     use DatabaseMigrations;
 
-    protected $loadEnvironmentVariables = true;
-
-    protected function getApplicationTimezone($app)
+    protected function setUp(): void
     {
-        return 'Asia/Seoul';
-    }
+        parent::setUp();
 
-    protected function getPackageProviders($app)
-    {
-        return [
-            LaravelGGServiceProvider::class,
-        ];
-    }
-
-    protected function defineDatabaseMigrations()
-    {
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-    }
-
-    public function getEnvironmentSetUp($app)
-    {
-        \config()->set('app.env', 'testing');
-        \config()->set('database.default', 'sqlite');
-        \config()->set('database.connections.sqlite.database', ':memory:');
+        $this->app->register(LaravelGgServiceProvider::class);
     }
 }

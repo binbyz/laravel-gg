@@ -11,6 +11,6 @@
 |
 */
 
-use Beaverlabs\LaravelGG\Tests\TestCase;
+use Tests\TestCase;
 
 uses(TestCase::class)->in('Unit');

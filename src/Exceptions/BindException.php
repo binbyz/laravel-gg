@@ -1,6 +1,6 @@
 <?php
 
-namespace Beaverlabs\LaravelGG\Exceptions;
+namespace Beaverlabs\LaravelGg\Exceptions;
 
 class BindException extends \Exception
 {
