@@ -10,8 +10,7 @@ class LaravelGgServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->bindCollection()
-            ->bindQueryBuilder();
+        $this->bindCollection()->bindQueryBuilder();
     }
 
     public function boot()
@@ -32,7 +31,9 @@ class LaravelGgServiceProvider extends ServiceProvider
     protected function bindQueryBuilder(): self
     {
         Builder::macro('gg', function () {
-            \gg($this);
+
+            /** @var Builder $this */
+            \gg($this->toSql());
 
             return $this;
         });

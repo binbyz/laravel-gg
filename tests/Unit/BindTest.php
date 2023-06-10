@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Query\Builder;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;
 
 it('can bind a collection', function () {
