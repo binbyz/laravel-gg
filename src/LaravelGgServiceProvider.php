@@ -13,7 +13,8 @@ class LaravelGgServiceProvider extends ServiceProvider
     public function register()
     {
         $this->bindCollection()
-            ->bindQueryBuilder();
+            ->bindQueryBuilder()
+            ->bindExceptionWatcher();
     }
 
     public function boot()
@@ -43,7 +44,7 @@ class LaravelGgServiceProvider extends ServiceProvider
         return $this;
     }
 
-    protected function bindEvent(): self
+    protected function bindExceptionWatcher(): self
     {
         Event::listen(MessageLogged::class, static function (MessageLogged $logged) {
             if (\array_key_exists('exception', $logged->context) && $logged->context['exception'] instanceof \Throwable) {
