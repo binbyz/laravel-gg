@@ -51,5 +51,7 @@ class LaravelGgServiceProvider extends ServiceProvider
                 \gg($logged->context['exception']);
             }
         });
+
+        return $this;
     }
 }
