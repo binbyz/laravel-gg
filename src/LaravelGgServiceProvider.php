@@ -2,7 +2,6 @@
 
 namespace Beaverlabs\LaravelGg;
 
-use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Log\Events\MessageLogged;
 use Illuminate\Support\Collection;
@@ -20,15 +19,6 @@ class LaravelGgServiceProvider extends ServiceProvider
 
     public function boot()
     {
-        $handler = $this->app->make(ExceptionHandler::class);
-
-        $originalReport = [$handler, 'report'];
-
-        $handler->report = function ($exception) use ($originalReport) {
-            gg($exception);
-
-            call_user_func($originalReport, $exception);
-        };
     }
 
     protected function bindCollection(): self
