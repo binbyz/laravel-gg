@@ -10,7 +10,7 @@
   ],
   "homepage": "https://github.com/binbyz/laravel-gg",
   "license": "MIT",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "authors": [
     {
       "name": "WONBEEN IM",
@@ -27,7 +27,7 @@
     "illuminate/database": "^7.20|^8.19|^9.0|^10.0",
     "illuminate/queue": "^7.20|^8.19|^9.0|^10.0",
     "illuminate/support": "^7.20|^8.19|^9.0|^10.0",
-    "beaverlabs/gg": "^1.0.8"
+    "beaverlabs/gg": "^1.0.9"
   },
   "require-dev": {
     "laravel/framework": "^7.20|^8.19|^9.0|^10.14.1",
