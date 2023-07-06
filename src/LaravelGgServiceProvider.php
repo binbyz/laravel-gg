@@ -12,13 +12,13 @@ class LaravelGgServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->bindCollection()
-            ->bindQueryBuilder()
-            ->bindExceptionWatcher();
     }
 
     public function boot()
     {
+        $this->bindCollection()
+            ->bindQueryBuilder()
+            ->bindExceptionWatcher();
     }
 
     protected function bindCollection(): self
