@@ -48,7 +48,7 @@ class LaravelGgServiceProvider extends ServiceProvider
     {
         Event::listen(MessageLogged::class, static function (MessageLogged $logged) {
             if (\array_key_exists('exception', $logged->context) && $logged->context['exception'] instanceof \Throwable) {
-                \gg($logged->context['exception']);
+                \gtrace($logged->context['exception']);
             }
         });
 
