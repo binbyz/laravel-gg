@@ -10,7 +10,7 @@
   ],
   "homepage": "https://github.com/binbyz/laravel-gg",
   "license": "MIT",
-  "version": "1.0.15",
+  "version": "1.0.16",
   "authors": [
     {
       "name": "WONBEEN IM",
@@ -21,21 +21,18 @@
   ],
   "require": {
     "php": "^7.4|^8.0",
-    "ext-curl": "*",
-    "ext-json": "*",
     "illuminate/contracts": "^7.20|^8.19|^9.0|^10.0",
     "illuminate/database": "^7.20|^8.19|^9.0|^10.0",
     "illuminate/queue": "^7.20|^8.19|^9.0|^10.0",
     "illuminate/support": "^7.20|^8.19|^9.0|^10.0",
-    "beaverlabs/gg": "^1.0.10"
+    "beaverlabs/gg": "^1.0.11"
   },
   "require-dev": {
     "laravel/framework": "^7.20|^8.19|^9.0|^10.14.1",
     "orchestra/testbench-core": "^5.0|^6.0|^7.0|^8.5.8",
     "mockery/mockery": "^1.6.2",
     "pestphp/pest": "^2.8.2",
-    "phpunit/phpunit": "^10.2.3",
-    "spatie/ray": "^1.37.2"
+    "phpunit/phpunit": "^10.2.3"
   },
   "autoload": {
     "psr-4": {
