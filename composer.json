@@ -25,7 +25,7 @@
     "illuminate/database": "^7.20|^8.19|^9.0|^10.0",
     "illuminate/queue": "^7.20|^8.19|^9.0|^10.0",
     "illuminate/support": "^7.20|^8.19|^9.0|^10.0",
-    "beaverlabs/gg": "^1.0.14"
+    "beaverlabs/gg": "dev-main"
   },
   "require-dev": {
     "laravel/framework": "^7.20|^8.19|^9.0|^10.0",
@@ -39,7 +39,6 @@
       "Beaverlabs\\LaravelGg\\": "src"
     },
     "files": [
-      "src/helpers.php"
     ]
   },
   "autoload-dev": {

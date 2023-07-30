@@ -2,6 +2,7 @@
 
 namespace Beaverlabs\LaravelGg;
 
+use Beaverlabs\Gg\Gg;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Log\Events\MessageLogged;
 use Illuminate\Support\Collection;
@@ -12,6 +13,9 @@ class LaravelGgServiceProvider extends ServiceProvider
 {
     public function register()
     {
+        $this->app->bind(Gg::class, static function () {
+            return new Gg();
+        });
     }
 
     public function boot()
